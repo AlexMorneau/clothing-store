@@ -1,5 +1,7 @@
 import { combineReducers } from 'redux';
+
 import userReducer from './user/user.reducer';
+import cartReducer from './cart/cart.reducer';
 
 /**
  * ROOT REDUCER represents the base reducer for all other reducers
@@ -7,5 +9,6 @@ import userReducer from './user/user.reducer';
  */
 
 export default combineReducers({
-    user: userReducer
+    user: userReducer,
+    cart: cartReducer
 });
