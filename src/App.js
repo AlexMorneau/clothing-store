@@ -24,14 +24,14 @@ class App extends React.Component {
   unsubscribeFromAuth = null;
 
   componentDidMount() {
-    // destructure so we don't have to use this.props.setCurrentUser
+    // destructure; alternatively use this.props.setCurrentUser
     const { setCurrentUser } = this.props; 
 
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
       if (userAuth) {
         const userReference = await createUserProfileDocument(userAuth);
 
-        // onSnapshot allows us to access database document properties with .data method
+        // onSnapshot allows access to database document properties with .data method
         userReference.onSnapshot(snapshot => {
           setCurrentUser({
             id: snapshot.id,
